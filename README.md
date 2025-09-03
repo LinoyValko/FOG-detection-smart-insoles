@@ -26,8 +26,6 @@ Unlike traditional approaches that rely on IMU sensors, this study explores the 
 - Existing detection methods rely heavily on **IMUs**, **manual annotation**, or clinical tests — often impractical for daily use.
 - **Smart insoles** offer a compelling alternative for continuous, non-intrusive monitoring.
 
-For full theoretical background, see [Chapter A – Theoretical Background](ספר%20פרויקט%20גמר-%20לינוי%20ולקו%20ושחר%20סימן%20טוב.pdf).
-
 ---
 
 ## Repository Structure
