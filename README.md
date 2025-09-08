@@ -34,12 +34,12 @@ The pipeline consists of six main scripts, each corresponding to a specific proc
 
 | Stage | Filename | Description |
 |-------|----------|-------------|
-| 1 | `load_data_1.py` | Loads, cleans, clips, and normalizes pressure data for each patient-foot-trial combination, including timestamp reconstruction and medication state extraction. |
+| 1 | `load_data.py` | Loads, cleans, clips, and normalizes pressure data for each patient-foot-trial combination, including timestamp reconstruction and medication state extraction. |
 | 2 | `acc_data.py` | Loads and cleans 3D acceleration signals from foot-worn sensors, resamples them, and prepares them for synchronization. |
 | 3 | `pre_process.py` | Performs data balancing, overlap removal between FOG/non-FOG, and removes short FOG episodes. Outputs clean, labeled segments per patient. |
 | 4 | `add_annotations.py` | Aligns manual annotations with insole data, adds task tags, corrects missing values, and generates aligned time segments. |
-| 5 | `Features_4.py` | Computes Center of Pressure (COP), Ground Reaction Force (GRF), their velocities and accelerations, per side and window. |
-| 6 | `pipline_like_article.py` | Implements model training (LSTM-based), feature selection, data preparation, and evaluation. Compares performance across variations. |
+| 5 | `features.py` | Computes Center of Pressure (COP), Ground Reaction Force (GRF), their velocities and accelerations, per side and window. |
+| 6 | `pipeline.py` | Implements model training (LSTM-based), feature selection, data preparation, and evaluation. Compares performance across variations. |
 
 
 ---
