@@ -40,7 +40,7 @@ The pipeline consists of six main scripts, each corresponding to a specific proc
 | 4 | `add_annotations.py` | Aligns manual annotations with insole data, adds task tags, corrects missing values, and generates aligned time segments. |
 | 5 | `features.py` | Computes Center of Pressure (COP), Ground Reaction Force (GRF), their velocities and accelerations, per side and window. |
 | 6 | `pipeline.py` | Implements model training (LSTM-based), feature selection, data preparation, and evaluation. Compares performance across variations. |
-
+| 7 | `error_calculations.py` | Post-hoc analysis of synchronization errors: computes delta_time between time sources and extracts 75th percentile values per file and globally. |
 
 ---
 
@@ -59,6 +59,21 @@ The data was collected from controlled FOG-inducing walking tests performed at *
 ## Results & Evaluation
 
 The LSTM-based model was evaluated using a **Leave-One-Freezer-Out (LOFO)** validation strategy, distinguishing between three classes: **FOG**, **Non-FOG**, and **Overlap**.
+
+---
+
+## Error Calculations & Analysis
+
+The notebook `error_calculations.ipynb` includes a post-hoc validation step that focuses on data synchronization accuracy.  
+- Computes `delta_time` between insole (`time_ms`) and phone (`phonetime_ms`) timestamps.  
+- Corrects systematic offsets (e.g., ±1h drifts).  
+- Quantifies error distributions using percentile measures (Q75).  
+- Exports enriched CSVs with error columns for each patient and trial.  
+- Produces summary tables for quick detection of outliers or misaligned recordings.  
+
+This step ensures reliable alignment between annotations and sensor data before model training and evaluation.
+
+---
 
 ### Performance Metrics
 
